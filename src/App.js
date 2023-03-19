@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { db } from "./firebase";
-import { query, collection, onSnapshot, addDoc } from "firebase/firestore";
+import {
+  query,
+  collection,
+  onSnapshot,
+  addDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 import Option from "./Option";
+import "./App.css";
 
 const App = () => {
   // STATES
@@ -13,6 +21,12 @@ const App = () => {
   const [js, setJs] = useState([]);
   const [react, setReact] = useState([]);
   const [cs, setCs] = useState([]);
+
+  // DELETE TODOS
+
+  const handleDelete = async (id) => {
+    await deleteDoc(doc(db, "htmls", id));
+  };
 
   // READ TODOS
 
@@ -131,7 +145,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="App">
       <form onSubmit={createQuestion}>
         <input
           placeholder="question"
@@ -154,7 +168,7 @@ const App = () => {
           Add New Interview Question
         </button>
       </form>
-      <div>
+      <ul>
         <Option
           option={option}
           htmls={htmls}
@@ -162,8 +176,10 @@ const App = () => {
           js={js}
           react={react}
           cs={cs}
+          handleDelete={handleDelete}
+          setHtml={setHtml}
         />
-      </div>
+      </ul>
     </div>
   );
 };
