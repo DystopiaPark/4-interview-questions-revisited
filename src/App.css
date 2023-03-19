@@ -84,9 +84,6 @@ span {
   font-size: 1.25rem;
   font-weight: 600;
 }
-.answer {
-  display: none;
-}
 .show,
 .hide {
   position: relative;
@@ -105,10 +102,25 @@ span {
   display: flex;
   display: none;
 }
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .answer {
   padding: 1rem;
   color: aquamarine;
   font-weight: 200;
+  display: none;
+  animation: show 2s linear 1;
+  overflow-wrap: break-word;
 }
 .box-shadow {
   box-shadow: 5px 10px 35px 4px rgb(121, 157, 187);
