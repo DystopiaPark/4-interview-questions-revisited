@@ -3,28 +3,34 @@
   margin: 0;
   padding: 0;
 }
+
 body {
-  background-color: rgb(53, 50, 50);
+  background-color: #1e2124;
 }
+
 .App {
   text-align: center;
   height: 100%;
-  background-color: rgb(53, 50, 50);
+  background-color: #1e2124;
   padding-bottom: 1rem;
 }
+
 ul {
   list-style-type: none;
   color: white;
 }
+
 form {
   padding: 1rem;
 }
+
 .checker {
   display: inline-block;
   margin: 0 0 0 0.5rem;
   height: 1rem;
   width: 1rem;
 }
+
 li {
   text-align: left;
   position: relative;
@@ -71,6 +77,10 @@ span {
   position: relative;
   left: 50%;
   transform: translate(-50%);
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
 }
 .hide {
   position: relative;
