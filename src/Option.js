@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineClose } from "react-icons/ai";
+import { HiTrash } from "react-icons/hi";
 
 const Option = ({ option, htmls, css, js, react, cs, handleDelete }) => {
   return option === "html"
@@ -7,7 +7,7 @@ const Option = ({ option, htmls, css, js, react, cs, handleDelete }) => {
         return (
           <li key={htmlEl.id}>
             <span>
-              <AiOutlineClose onClick={() => handleDelete(htmlEl.id)} />
+              <HiTrash onClick={() => handleDelete(htmlEl.id)} />
             </span>
             <p>Question:</p>
             <p className="question">{htmlEl.question}</p>
@@ -19,6 +19,10 @@ const Option = ({ option, htmls, css, js, react, cs, handleDelete }) => {
                 e.target.nextSibling.nextSibling.style.display = "block";
                 e.target.nextSibling.nextSibling.nextSibling.style.display =
                   "block";
+                e.target.parentElement.scrollTo(
+                  0,
+                  e.target.parentElement.scrollHeight
+                );
               }}
             >
               Show Answer
