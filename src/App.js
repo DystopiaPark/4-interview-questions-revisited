@@ -171,7 +171,7 @@ const App = () => {
           <option value="react">React</option>
           <option value="cs">CS</option>
         </select>
-        <button type="submit" value="Add question">
+        <button type="submit" value="Add question" className="submit-btn">
           Add New Interview Question
         </button>
       </form>

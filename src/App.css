@@ -50,10 +50,17 @@ li p {
 }
 input,
 select {
-  padding-right: 0.5rem;
+  padding: 0.25rem;
   margin-right: 0.5rem;
+  background: #282b30;
+  color: white;
 }
-
+.submit-btn {
+  padding: 0.25rem 0.5rem;
+  background-color: #282b30;
+  color: white;
+  font-weight: 600;
+}
 .title {
   color: white;
   text-transform: uppercase;
@@ -65,10 +72,6 @@ select {
   left: 50%;
   transform: translate(-50%);
   box-shadow: 5px 10px 45px 4px rgb(121, 157, 187) !important;
-}
-button {
-  padding: 0 0.25rem;
-  background-color: white;
 }
 
 span {
