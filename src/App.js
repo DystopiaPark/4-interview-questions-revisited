@@ -177,7 +177,6 @@ const App = () => {
           react={react}
           cs={cs}
           handleDelete={handleDelete}
-          setHtml={setHtml}
         />
       </ul>
     </div>
