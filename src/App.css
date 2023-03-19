@@ -31,12 +31,13 @@ form {
   width: 1rem;
 }
 
-li {
+.card {
   text-align: left;
   position: relative;
   left: 50%;
   transform: translate(-50%);
-  border: 2px solid white;
+  background: #282b30;
+  border-radius: 5px;
   font-size: 1.2rem;
   padding: 0.25rem 0;
   margin-bottom: 0.5rem;
@@ -59,6 +60,11 @@ select {
   margin-bottom: 1rem;
   font-size: 1.25rem;
   font-weight: 700;
+  width: 50%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  box-shadow: 5px 10px 45px 4px rgb(121, 157, 187) !important;
 }
 button {
   padding: 0 0.25rem;
@@ -70,21 +76,37 @@ span {
   cursor: pointer;
   padding: 0.25rem 0.5rem 0 0;
 }
+.question {
+  color: rgb(121, 157, 187);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
 .answer {
   display: none;
 }
-.show {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0;
-}
+.show,
 .hide {
   position: relative;
   left: 50%;
   transform: translate(-50%);
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+  background-color: #282b30;
+  color: white;
+  height: 1rem;
+  border: none;
+}
+.hide {
+  display: flex;
   display: none;
+}
+.answer {
+  padding: 1rem;
+  color: aquamarine;
+  font-weight: 200;
+}
+.box-shadow {
+  box-shadow: 5px 10px 35px 4px rgb(121, 157, 187);
 }

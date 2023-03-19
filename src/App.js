@@ -175,7 +175,7 @@ const App = () => {
           Add New Interview Question
         </button>
       </form>
-      <p className="title">{option} questions:</p>
+      <p className="title box-shadow">{option} questions:</p>
       <ul>
         <Option
           option={option}

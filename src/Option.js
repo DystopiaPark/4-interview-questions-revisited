@@ -1,18 +1,17 @@
 import React from "react";
 import { HiTrash } from "react-icons/hi";
-import { BsArrowDownSquareFill } from "react-icons/bs";
 
 const Option = ({ option, htmls, css, js, react, cs, handleDelete }) => {
   return option === "html"
     ? htmls.map((htmlEl) => {
         return (
-          <li key={htmlEl.id}>
+          <li key={htmlEl.id} className="card">
             <span>
               <HiTrash onClick={() => handleDelete(htmlEl.id)} />
             </span>
-            <p className="question">Question: {htmlEl.question}</p>
-            <p
-              className="show"
+            <p className="question">{htmlEl.question}</p>
+            <button
+              className="show box-shadow"
               onClick={(e) => {
                 e.target.style.display = "none";
                 e.target.nextSibling.style.display = "block";
@@ -25,9 +24,9 @@ const Option = ({ option, htmls, css, js, react, cs, handleDelete }) => {
                 );
               }}
             >
-              <BsArrowDownSquareFill />
-            </p>
-            <p className="hide">Answer:</p>
+              Show Answer
+            </button>
+            <p className="hide answer">Answer:</p>
             <p
               className="answer"
               onClick={(e) => {
@@ -37,7 +36,7 @@ const Option = ({ option, htmls, css, js, react, cs, handleDelete }) => {
               {htmlEl.answer}
             </p>
             <button
-              className="hide"
+              className="hide box-shadow"
               onClick={(e) => {
                 e.target.style.display = "none";
                 e.target.previousSibling.style.display = "none";
