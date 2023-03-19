@@ -1,23 +1,45 @@
 import React from "react";
 
-const Option = ({ option, htmls, css }) => {
+const Option = ({ option, htmls, css, js, react, cs }) => {
   return option === "html"
-    ? htmls.map((html, index) => {
+    ? htmls.map((htmlEl) => {
         return (
-          <li>
-            {html.question} {html.answer}
+          <li key={htmlEl.id}>
+            {htmlEl.question} {htmlEl.answer}
           </li>
         );
       })
     : option === "css"
-    ? css.map((cssEl, index) => {
+    ? css.map((cssEl) => {
         return (
-          <li>
+          <li key={cssEl.id}>
             {cssEl.question} {cssEl.answer}
           </li>
         );
       })
-    : option === "html";
+    : option === "js"
+    ? js.map((jsEl) => {
+        return (
+          <li key={jsEl.id}>
+            {jsEl.question} {jsEl.answer}
+          </li>
+        );
+      })
+    : option === "react"
+    ? react.map((reactEl) => {
+        return (
+          <li key={reactEl.id}>
+            {reactEl.question} {reactEl.answer}
+          </li>
+        );
+      })
+    : cs.map((csEl) => {
+        return (
+          <li key={csEl.id}>
+            {csEl.question} {csEl.answer}
+          </li>
+        );
+      });
 };
 
 export default Option;

@@ -162,7 +162,6 @@ const App = () => {
           js={js}
           react={react}
           cs={cs}
-          key={"bla"}
         />
       </div>
     </div>
