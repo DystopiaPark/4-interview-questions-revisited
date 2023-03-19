@@ -116,7 +116,7 @@ const App = () => {
     setQuestion("");
     setAnswer("");
     if (answer === "" || question === "") {
-      alert("Please enter a valid todo");
+      alert("Please enter a valid question and answer");
       return;
     }
     if (option === "html") {
