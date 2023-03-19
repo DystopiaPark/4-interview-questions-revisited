@@ -35,7 +35,7 @@ const App = () => {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let htmlArr = [];
       querySnapshot.forEach((doc) => {
-        htmlArr.push({
+        htmlArr.unshift({
           ...doc.data(),
           id: doc.id,
         });
@@ -50,7 +50,7 @@ const App = () => {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let jsArr = [];
       querySnapshot.forEach((doc) => {
-        jsArr.push({
+        jsArr.unshift({
           ...doc.data(),
           id: doc.id,
         });
@@ -65,7 +65,7 @@ const App = () => {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let reactArr = [];
       querySnapshot.forEach((doc) => {
-        reactArr.push({
+        reactArr.unshift({
           ...doc.data(),
           id: doc.id,
         });
@@ -81,7 +81,7 @@ const App = () => {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let csArr = [];
       querySnapshot.forEach((doc) => {
-        csArr.push({
+        csArr.unshift({
           ...doc.data(),
           id: doc.id,
         });
@@ -96,7 +96,7 @@ const App = () => {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let cssArr = [];
       querySnapshot.forEach((doc) => {
-        cssArr.push({
+        cssArr.unshift({
           ...doc.data(),
           id: doc.id,
         });
@@ -168,6 +168,7 @@ const App = () => {
           Add New Interview Question
         </button>
       </form>
+      <p className="title">{option} questions:</p>
       <ul>
         <Option
           option={option}
