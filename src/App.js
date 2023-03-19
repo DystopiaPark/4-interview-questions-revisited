@@ -7,6 +7,8 @@ import {
   addDoc,
   deleteDoc,
   doc,
+  Timestamp,
+  orderBy,
 } from "firebase/firestore";
 import Option from "./Option";
 import "./App.css";
@@ -31,7 +33,7 @@ const App = () => {
   // READ TODOS
 
   useEffect(() => {
-    const q = query(collection(db, "htmls"));
+    const q = query(collection(db, "htmls"), orderBy("created_at", "desc"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let htmlArr = [];
       querySnapshot.forEach((doc) => {
@@ -41,6 +43,7 @@ const App = () => {
         });
       });
       setHtml(htmlArr);
+      console.log(htmlArr);
     });
     return () => unsubscribe();
   }, []);
@@ -108,7 +111,10 @@ const App = () => {
 
   // CREATE TODOS
   const createQuestion = async (e) => {
+    const date = new Date();
     e.preventDefault(e);
+    setQuestion("");
+    setAnswer("");
     if (answer === "" || question === "") {
       alert("Please enter a valid todo");
       return;
@@ -117,6 +123,7 @@ const App = () => {
       await addDoc(collection(db, "htmls"), {
         answer: answer,
         question: question,
+        created_at: Timestamp.fromDate(date),
       });
     } else if (option === "css") {
       await addDoc(collection(db, "css"), {
