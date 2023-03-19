@@ -9,8 +9,7 @@ const Option = ({ option, htmls, css, js, react, cs, handleDelete }) => {
             <span>
               <HiTrash onClick={() => handleDelete(htmlEl.id)} />
             </span>
-            <p>Question:</p>
-            <p className="question">{htmlEl.question}</p>
+            <p className="question">Question: {htmlEl.question}</p>
             <button
               className="show"
               onClick={(e) => {
