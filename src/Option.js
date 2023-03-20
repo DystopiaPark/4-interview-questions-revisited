@@ -7,7 +7,17 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
         return (
           <li key={htmlEl.id} className="card">
             <span>
-              <HiTrash onClick={() => handleDelete(htmlEl.id)} />
+              <HiTrash
+                onClick={() => {
+                  if (
+                    window.confirm(
+                      "Are you sure you want to delete this message?"
+                    )
+                  ) {
+                    handleDelete(htmlEl.id);
+                  }
+                }}
+              />
             </span>
             <p className="question">{htmlEl.question}</p>
             <button
@@ -55,7 +65,17 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
         return (
           <li key={cssEl.id} className="card">
             <span>
-              <HiTrash onClick={() => handleDelete(cssEl.id)} />
+              <HiTrash
+                onClick={() => {
+                  if (
+                    window.confirm(
+                      "Are you sure you want to delete this message?"
+                    )
+                  ) {
+                    handleDelete(cssEl.id);
+                  }
+                }}
+              />
             </span>
             <p className="question">{cssEl.question}</p>
             <button
@@ -103,7 +123,17 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
         return (
           <li key={jsEl.id} className="card">
             <span>
-              <HiTrash onClick={() => handleDelete(jsEl.id)} />
+              <HiTrash
+                onClick={() => {
+                  if (
+                    window.confirm(
+                      "Are you sure you want to delete this message?"
+                    )
+                  ) {
+                    handleDelete(jsEl.id);
+                  }
+                }}
+              />
             </span>
             <p className="question">{jsEl.question}</p>
             <button
@@ -151,7 +181,17 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
         return (
           <li key={reactEl.id} className="card">
             <span>
-              <HiTrash onClick={() => handleDelete(reactEl.id)} />
+              <HiTrash
+                onClick={() => {
+                  if (
+                    window.confirm(
+                      "Are you sure you want to delete this message?"
+                    )
+                  ) {
+                    handleDelete(reactEl.id);
+                  }
+                }}
+              />
             </span>
             <p className="question">{reactEl.question}</p>
             <button
@@ -198,7 +238,17 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
         return (
           <li key={csEl.id} className="card">
             <span>
-              <HiTrash onClick={() => handleDelete(csEl.id)} />
+              <HiTrash
+                onClick={() => {
+                  if (
+                    window.confirm(
+                      "Are you sure you want to delete this message?"
+                    )
+                  ) {
+                    handleDelete(csEl.id);
+                  }
+                }}
+              />
             </span>
             <p className="question">{csEl.question}</p>
             <button
