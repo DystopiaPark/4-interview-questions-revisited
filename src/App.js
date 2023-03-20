@@ -49,7 +49,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const q = query(collection(db, "js"));
+    const q = query(collection(db, "js"), orderBy("created_at", "desc"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let jsArr = [];
       querySnapshot.forEach((doc) => {
@@ -64,7 +64,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const q = query(collection(db, "react"));
+    const q = query(collection(db, "react"), orderBy("created_at", "desc"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let reactArr = [];
       querySnapshot.forEach((doc) => {
@@ -80,7 +80,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const q = query(collection(db, "cs"));
+    const q = query(collection(db, "cs"), orderBy("created_at", "desc"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let csArr = [];
       querySnapshot.forEach((doc) => {
@@ -95,7 +95,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const q = query(collection(db, "css"));
+    const q = query(collection(db, "css"), orderBy("created_at", "desc"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let cssArr = [];
       querySnapshot.forEach((doc) => {
@@ -129,21 +129,25 @@ const App = () => {
       await addDoc(collection(db, "css"), {
         answer: answer,
         question: question,
+        created_at: Timestamp.fromDate(date),
       });
     } else if (option === "js") {
       await addDoc(collection(db, "js"), {
         answer: answer,
         question: question,
+        created_at: Timestamp.fromDate(date),
       });
     } else if (option === "react") {
       await addDoc(collection(db, "react"), {
         answer: answer,
         question: question,
+        created_at: Timestamp.fromDate(date),
       });
     } else if (option === "cs") {
       await addDoc(collection(db, "cs"), {
         answer: answer,
         question: question,
+        created_at: Timestamp.fromDate(date),
       });
     }
 
