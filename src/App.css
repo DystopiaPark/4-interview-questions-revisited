@@ -45,6 +45,9 @@ form {
   max-height: 400px;
   overflow: auto;
 }
+.card:hover {
+  opacity: 0.8;
+}
 li p {
   padding: 1rem;
 }
@@ -54,6 +57,18 @@ select {
   margin-right: 0.5rem;
   background: #282b30;
   color: white;
+}
+.textarea-answer {
+  background: #282b30;
+  height: 4rem;
+  padding: 0.25rem;
+  margin-right: 0.5rem;
+  margin-bottom: -0.6rem;
+  color: white;
+  min-width: 10rem;
+  min-height: 1.7rem;
+  max-width: 30rem;
+  max-height: 15rem;
 }
 .submit-btn {
   padding: 0.25rem 0.5rem;
@@ -79,6 +94,9 @@ span {
   cursor: pointer;
   padding: 0.25rem 0.5rem 0 0;
 }
+span:hover {
+  color: red;
+}
 .question {
   color: rgb(121, 157, 187);
   font-size: 1.25rem;
@@ -90,7 +108,6 @@ span {
   left: 50%;
   transform: translate(-50%);
   justify-content: center;
-  cursor: pointer;
   padding: 0;
   width: 100%;
   background-color: #282b30;
@@ -99,7 +116,6 @@ span {
   border: none;
 }
 .hide {
-  display: flex;
   display: none;
 }
 
@@ -114,6 +130,9 @@ span {
     opacity: 1;
   }
 }
+button {
+  cursor: pointer;
+}
 .answer {
   padding: 1rem;
   color: aquamarine;
@@ -121,6 +140,10 @@ span {
   display: none;
   animation: show 2s linear 1;
   overflow-wrap: break-word;
+}
+.answer2 {
+  padding-top: 0;
+  color: aqua;
 }
 .box-shadow {
   box-shadow: 5px 10px 35px 4px rgb(121, 157, 187);

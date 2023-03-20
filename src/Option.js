@@ -1,9 +1,9 @@
 import React from "react";
 import { HiTrash } from "react-icons/hi";
 
-const Option = ({ option, htmls, css, js, react, cs, handleDelete }) => {
+const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
   return option === "html"
-    ? htmls.map((htmlEl) => {
+    ? html.map((htmlEl) => {
         return (
           <li key={htmlEl.id} className="card">
             <span>
@@ -26,7 +26,7 @@ const Option = ({ option, htmls, css, js, react, cs, handleDelete }) => {
             >
               Show Answer
             </button>
-            <p className="hide answer">Answer:</p>
+            <p className="hide answer answer2">Answer:</p>
             <p
               className="answer"
               onClick={(e) => {
@@ -53,32 +53,191 @@ const Option = ({ option, htmls, css, js, react, cs, handleDelete }) => {
     : option === "css"
     ? css.map((cssEl) => {
         return (
-          <li key={cssEl.id}>
-            <p>{cssEl.question}</p>
-            <p>{cssEl.answer}</p>
+          <li key={cssEl.id} className="card">
+            <span>
+              <HiTrash onClick={() => handleDelete(cssEl.id)} />
+            </span>
+            <p className="question">{cssEl.question}</p>
+            <button
+              className="show box-shadow"
+              onClick={(e) => {
+                e.target.style.display = "none";
+                e.target.nextSibling.style.display = "block";
+                e.target.nextSibling.nextSibling.style.display = "block";
+                e.target.nextSibling.nextSibling.nextSibling.style.display =
+                  "block";
+                e.target.parentElement.scrollTo(
+                  0,
+                  e.target.parentElement.scrollHeight
+                );
+              }}
+            >
+              Show Answer
+            </button>
+            <p className="hide answer answer2">Answer:</p>
+            <p
+              className="answer"
+              onClick={(e) => {
+                e.target.contentEditable = "true";
+              }}
+            >
+              {cssEl.answer}
+            </p>
+            <button
+              className="hide box-shadow"
+              onClick={(e) => {
+                e.target.style.display = "none";
+                e.target.previousSibling.style.display = "none";
+                e.target.previousSibling.previousSibling.style.display = "none";
+                e.target.previousSibling.previousSibling.previousSibling.style.display =
+                  "flex";
+              }}
+            >
+              Hide Answer
+            </button>
           </li>
         );
       })
     : option === "js"
     ? js.map((jsEl) => {
         return (
-          <li key={jsEl.id}>
-            {jsEl.question} {jsEl.answer}
+          <li key={jsEl.id} className="card">
+            <span>
+              <HiTrash onClick={() => handleDelete(jsEl.id)} />
+            </span>
+            <p className="question">{jsEl.question}</p>
+            <button
+              className="show box-shadow"
+              onClick={(e) => {
+                e.target.style.display = "none";
+                e.target.nextSibling.style.display = "block";
+                e.target.nextSibling.nextSibling.style.display = "block";
+                e.target.nextSibling.nextSibling.nextSibling.style.display =
+                  "block";
+                e.target.parentElement.scrollTo(
+                  0,
+                  e.target.parentElement.scrollHeight
+                );
+              }}
+            >
+              Show Answer
+            </button>
+            <p className="hide answer answer2">Answer:</p>
+            <p
+              className="answer"
+              onClick={(e) => {
+                e.target.contentEditable = "true";
+              }}
+            >
+              {jsEl.answer}
+            </p>
+            <button
+              className="hide box-shadow"
+              onClick={(e) => {
+                e.target.style.display = "none";
+                e.target.previousSibling.style.display = "none";
+                e.target.previousSibling.previousSibling.style.display = "none";
+                e.target.previousSibling.previousSibling.previousSibling.style.display =
+                  "flex";
+              }}
+            >
+              Hide Answer
+            </button>
           </li>
         );
       })
     : option === "react"
     ? react.map((reactEl) => {
         return (
-          <li key={reactEl.id}>
-            {reactEl.question} {reactEl.answer}
+          <li key={reactEl.id} className="card">
+            <span>
+              <HiTrash onClick={() => handleDelete(reactEl.id)} />
+            </span>
+            <p className="question">{reactEl.question}</p>
+            <button
+              className="show box-shadow"
+              onClick={(e) => {
+                e.target.style.display = "none";
+                e.target.nextSibling.style.display = "block";
+                e.target.nextSibling.nextSibling.style.display = "block";
+                e.target.nextSibling.nextSibling.nextSibling.style.display =
+                  "block";
+                e.target.parentElement.scrollTo(
+                  0,
+                  e.target.parentElement.scrollHeight
+                );
+              }}
+            >
+              Show Answer
+            </button>
+            <p className="hide answer answer2">Answer:</p>
+            <p
+              className="answer"
+              onClick={(e) => {
+                e.target.contentEditable = "true";
+              }}
+            >
+              {reactEl.answer}
+            </p>
+            <button
+              className="hide box-shadow"
+              onClick={(e) => {
+                e.target.style.display = "none";
+                e.target.previousSibling.style.display = "none";
+                e.target.previousSibling.previousSibling.style.display = "none";
+                e.target.previousSibling.previousSibling.previousSibling.style.display =
+                  "flex";
+              }}
+            >
+              Hide Answer
+            </button>
           </li>
         );
       })
     : cs.map((csEl) => {
         return (
-          <li key={csEl.id}>
-            {csEl.question} {csEl.answer}
+          <li key={csEl.id} className="card">
+            <span>
+              <HiTrash onClick={() => handleDelete(csEl.id)} />
+            </span>
+            <p className="question">{csEl.question}</p>
+            <button
+              className="show box-shadow"
+              onClick={(e) => {
+                e.target.style.display = "none";
+                e.target.nextSibling.style.display = "block";
+                e.target.nextSibling.nextSibling.style.display = "block";
+                e.target.nextSibling.nextSibling.nextSibling.style.display =
+                  "block";
+                e.target.parentElement.scrollTo(
+                  0,
+                  e.target.parentElement.scrollHeight
+                );
+              }}
+            >
+              Show Answer
+            </button>
+            <p className="hide answer answer2">Answer:</p>
+            <p
+              className="answer"
+              onClick={(e) => {
+                e.target.contentEditable = "true";
+              }}
+            >
+              {csEl.answer}
+            </p>
+            <button
+              className="hide box-shadow"
+              onClick={(e) => {
+                e.target.style.display = "none";
+                e.target.previousSibling.style.display = "none";
+                e.target.previousSibling.previousSibling.style.display = "none";
+                e.target.previousSibling.previousSibling.previousSibling.style.display =
+                  "flex";
+              }}
+            >
+              Hide Answer
+            </button>
           </li>
         );
       });

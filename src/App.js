@@ -18,7 +18,7 @@ const App = () => {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [option, setOption] = useState("html");
-  const [htmls, setHtml] = useState([]);
+  const [html, setHtml] = useState([]);
   const [css, setCss] = useState([]);
   const [js, setJs] = useState([]);
   const [react, setReact] = useState([]);
@@ -27,13 +27,13 @@ const App = () => {
   // DELETE TODOS
 
   const handleDelete = async (id) => {
-    await deleteDoc(doc(db, "htmls", id));
+    await deleteDoc(doc(db, option, id));
   };
 
   // READ TODOS
 
   useEffect(() => {
-    const q = query(collection(db, "htmls"), orderBy("created_at", "desc"));
+    const q = query(collection(db, "html"), orderBy("created_at", "desc"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let htmlArr = [];
       querySnapshot.forEach((doc) => {
@@ -120,7 +120,7 @@ const App = () => {
       return;
     }
     if (option === "html") {
-      await addDoc(collection(db, "htmls"), {
+      await addDoc(collection(db, "html"), {
         answer: answer,
         question: question,
         created_at: Timestamp.fromDate(date),
@@ -155,15 +155,17 @@ const App = () => {
     <div className="App">
       <form onSubmit={createQuestion}>
         <input
+          type="text"
           placeholder="question"
           onChange={(e) => setQuestion(e.target.value)}
           value={question}
         />
-        <input
+        <textarea
+          className="textarea-answer"
           placeholder="answer"
           onChange={(e) => setAnswer(e.target.value)}
           value={answer}
-        />
+        ></textarea>
         <select value={option} onChange={(e) => setOption(e.target.value)}>
           <option value="html">HTML</option>
           <option value="css">CSS</option>
@@ -179,7 +181,7 @@ const App = () => {
       <ul>
         <Option
           option={option}
-          htmls={htmls}
+          html={html}
           css={css}
           js={js}
           react={react}
