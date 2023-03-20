@@ -11,7 +11,7 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
                 onClick={() => {
                   if (
                     window.confirm(
-                      "Are you sure you want to delete this message?"
+                      "Are you sure you want to delete this question?"
                     )
                   ) {
                     handleDelete(htmlEl.id);
@@ -69,7 +69,7 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
                 onClick={() => {
                   if (
                     window.confirm(
-                      "Are you sure you want to delete this message?"
+                      "Are you sure you want to delete this question?"
                     )
                   ) {
                     handleDelete(cssEl.id);
@@ -127,7 +127,7 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
                 onClick={() => {
                   if (
                     window.confirm(
-                      "Are you sure you want to delete this message?"
+                      "Are you sure you want to delete this question?"
                     )
                   ) {
                     handleDelete(jsEl.id);
@@ -185,7 +185,7 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
                 onClick={() => {
                   if (
                     window.confirm(
-                      "Are you sure you want to delete this message?"
+                      "Are you sure you want to delete this question?"
                     )
                   ) {
                     handleDelete(reactEl.id);
@@ -242,7 +242,7 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
                 onClick={() => {
                   if (
                     window.confirm(
-                      "Are you sure you want to delete this message?"
+                      "Are you sure you want to delete this question?"
                     )
                   ) {
                     handleDelete(csEl.id);
