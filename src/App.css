@@ -118,6 +118,10 @@ span:hover {
 .hide {
   display: none;
 }
+.paragraph-length {
+  color: rgb(121, 157, 187);
+  margin: 1rem;
+}
 
 @keyframes show {
   0% {
@@ -188,4 +192,7 @@ button {
   .card {
     width: 100%;
   }
+}
+.hover:hover {
+  opacity: 0.8;
 }

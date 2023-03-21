@@ -1,3 +1,7 @@
+//============================================================
+// IMPORTS
+//============================================================
+
 import React, { useEffect, useState } from "react";
 import { db } from "./firebase";
 import {
@@ -14,7 +18,9 @@ import Option from "./Option";
 import "./App.css";
 
 const App = () => {
+  //============================================================
   // STATES
+  //============================================================
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [option, setOption] = useState("html");
@@ -24,14 +30,16 @@ const App = () => {
   const [react, setReact] = useState([]);
   const [cs, setCs] = useState([]);
 
+  //============================================================
   // DELETE TODOS
-
+  //============================================================
   const handleDelete = async (id) => {
     await deleteDoc(doc(db, option, id));
   };
 
+  //============================================================
   // READ TODOS
-
+  //============================================================
   useEffect(() => {
     const q = query(collection(db, "html"), orderBy("created_at", "desc"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -75,7 +83,6 @@ const App = () => {
       });
       setReact(reactArr);
     });
-
     return () => unsubscribe();
   }, []);
 
@@ -109,7 +116,9 @@ const App = () => {
     return () => unsubscribe();
   }, []);
 
+  //============================================================
   // CREATE TODOS
+  //============================================================
   const createQuestion = async (e) => {
     const date = new Date();
     e.preventDefault(e);
@@ -119,40 +128,46 @@ const App = () => {
       alert("Please enter a valid question and answer");
       return;
     }
-    if (option === "html") {
-      await addDoc(collection(db, "html"), {
-        answer: answer,
-        question: question,
-        created_at: Timestamp.fromDate(date),
-      });
-    } else if (option === "css") {
-      await addDoc(collection(db, "css"), {
-        answer: answer,
-        question: question,
-        created_at: Timestamp.fromDate(date),
-      });
-    } else if (option === "js") {
-      await addDoc(collection(db, "js"), {
-        answer: answer,
-        question: question,
-        created_at: Timestamp.fromDate(date),
-      });
-    } else if (option === "react") {
-      await addDoc(collection(db, "react"), {
-        answer: answer,
-        question: question,
-        created_at: Timestamp.fromDate(date),
-      });
-    } else if (option === "cs") {
-      await addDoc(collection(db, "cs"), {
-        answer: answer,
-        question: question,
-        created_at: Timestamp.fromDate(date),
-      });
-    }
-
+    await addDoc(collection(db, option), {
+      answer: answer,
+      question: question,
+      created_at: Timestamp.fromDate(date),
+    });
     setQuestion("");
     setAnswer("");
+  };
+  //============================================================
+  // currentArrayLength
+  //============================================================
+  const currentArrayLength = () => {
+    if (option === "html") {
+      return html.length;
+    } else if (option === "css") {
+      return css.length;
+    } else if (option === "js") {
+      return js.length;
+    } else if (option === "react") {
+      return react.length;
+    } else if (option === "cs") {
+      return cs.length;
+    }
+  };
+
+  //============================================================
+  // currentArray
+  //============================================================
+  const currentArray = () => {
+    if (option === "html") {
+      return html;
+    } else if (option === "css") {
+      return css;
+    } else if (option === "js") {
+      return js;
+    } else if (option === "react") {
+      return react;
+    } else if (option === "cs") {
+      return cs;
+    }
   };
 
   return (
@@ -182,6 +197,9 @@ const App = () => {
         </button>
       </form>
       <p className="title box-shadow">{option} questions:</p>
+      <p className="paragraph-length">
+        There are currently {currentArrayLength()} questions
+      </p>
       <ul>
         <Option
           option={option}
@@ -191,6 +209,7 @@ const App = () => {
           react={react}
           cs={cs}
           handleDelete={handleDelete}
+          currentArray={currentArray}
         />
       </ul>
     </div>
