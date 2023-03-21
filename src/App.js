@@ -16,13 +16,12 @@ import {
 } from "firebase/firestore";
 import Option from "./Option";
 import "./App.css";
-//============================================================
-// APP
-//============================================================
+
 const App = () => {
   //============================================================
   // STATES
   //============================================================
+
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [option, setOption] = useState("html");
@@ -35,6 +34,7 @@ const App = () => {
   //============================================================
   // DELETE TODOS
   //============================================================
+
   const handleDelete = async (id) => {
     await deleteDoc(doc(db, option, id));
   };
@@ -42,85 +42,36 @@ const App = () => {
   //============================================================
   // READ TODOS
   //============================================================
-  useEffect(() => {
-    const q = query(collection(db, "html"), orderBy("created_at", "desc"));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      let htmlArr = [];
-      querySnapshot.forEach((doc) => {
-        htmlArr.unshift({
-          ...doc.data(),
-          id: doc.id,
-        });
-      });
-      setHtml(htmlArr);
-      console.log(htmlArr);
-    });
-    return () => unsubscribe();
-  }, []);
 
   useEffect(() => {
-    const q = query(collection(db, "js"), orderBy("created_at", "desc"));
+    const q = query(collection(db, option), orderBy("created_at", "desc"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      let jsArr = [];
+      let arr = [];
       querySnapshot.forEach((doc) => {
-        jsArr.unshift({
+        arr.unshift({
           ...doc.data(),
           id: doc.id,
         });
       });
-      setJs(jsArr);
+      if (option === "html") {
+        setHtml(arr);
+      } else if (option === "css") {
+        setCss(arr);
+      } else if (option === "js") {
+        setJs(arr);
+      } else if (option === "react") {
+        setReact(arr);
+      } else if (option === "cs") {
+        setCs(arr);
+      }
     });
     return () => unsubscribe();
-  }, []);
-
-  useEffect(() => {
-    const q = query(collection(db, "react"), orderBy("created_at", "desc"));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      let reactArr = [];
-      querySnapshot.forEach((doc) => {
-        reactArr.unshift({
-          ...doc.data(),
-          id: doc.id,
-        });
-      });
-      setReact(reactArr);
-    });
-    return () => unsubscribe();
-  }, []);
-
-  useEffect(() => {
-    const q = query(collection(db, "cs"), orderBy("created_at", "desc"));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      let csArr = [];
-      querySnapshot.forEach((doc) => {
-        csArr.unshift({
-          ...doc.data(),
-          id: doc.id,
-        });
-      });
-      setCs(csArr);
-    });
-    return () => unsubscribe();
-  }, []);
-
-  useEffect(() => {
-    const q = query(collection(db, "css"), orderBy("created_at", "desc"));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      let cssArr = [];
-      querySnapshot.forEach((doc) => {
-        cssArr.unshift({
-          ...doc.data(),
-          id: doc.id,
-        });
-      });
-      setCss(cssArr);
-    });
-    return () => unsubscribe();
-  }, []);
+  }, [option]);
 
   //============================================================
   // CREATE TODOS
   //============================================================
+
   const createQuestion = async (e) => {
     const date = new Date();
     e.preventDefault(e);
@@ -141,6 +92,7 @@ const App = () => {
   //============================================================
   // currentArrayLength
   //============================================================
+
   const currentArrayLength = () => {
     if (option === "html") {
       return html.length;
@@ -158,6 +110,7 @@ const App = () => {
   //============================================================
   // currentArray
   //============================================================
+
   const currentArray = () => {
     if (option === "html") {
       return html;
