@@ -135,7 +135,7 @@ button {
 }
 .answer {
   padding: 1rem;
-  color: aquamarine;
+  color: rgb(41, 203, 149);
   font-weight: 200;
   display: none;
   animation: show 1s linear 1;

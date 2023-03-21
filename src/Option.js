@@ -28,6 +28,7 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
                 e.target.nextSibling.nextSibling.style.display = "block";
                 e.target.nextSibling.nextSibling.nextSibling.style.display =
                   "block";
+                e.target.parentElement.style.opacity = 1;
                 e.target.parentElement.scrollTo(
                   0,
                   e.target.parentElement.scrollHeight
@@ -86,6 +87,7 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
                 e.target.nextSibling.nextSibling.style.display = "block";
                 e.target.nextSibling.nextSibling.nextSibling.style.display =
                   "block";
+                e.target.parentElement.style.opacity = 1;
                 e.target.parentElement.scrollTo(
                   0,
                   e.target.parentElement.scrollHeight
@@ -144,6 +146,7 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
                 e.target.nextSibling.nextSibling.style.display = "block";
                 e.target.nextSibling.nextSibling.nextSibling.style.display =
                   "block";
+                e.target.parentElement.style.opacity = 1;
                 e.target.parentElement.scrollTo(
                   0,
                   e.target.parentElement.scrollHeight
@@ -202,6 +205,7 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
                 e.target.nextSibling.nextSibling.style.display = "block";
                 e.target.nextSibling.nextSibling.nextSibling.style.display =
                   "block";
+                e.target.parentElement.style.opacity = 1;
                 e.target.parentElement.scrollTo(
                   0,
                   e.target.parentElement.scrollHeight
@@ -259,6 +263,7 @@ const Option = ({ option, html, css, js, react, cs, handleDelete }) => {
                 e.target.nextSibling.nextSibling.style.display = "block";
                 e.target.nextSibling.nextSibling.nextSibling.style.display =
                   "block";
+                e.target.parentElement.style.opacity = 1;
                 e.target.parentElement.scrollTo(
                   0,
                   e.target.parentElement.scrollHeight
