@@ -138,7 +138,7 @@ button {
   color: aquamarine;
   font-weight: 200;
   display: none;
-  animation: show 2s linear 1;
+  animation: show 1s linear 1;
   overflow-wrap: break-word;
 }
 .answer2 {
