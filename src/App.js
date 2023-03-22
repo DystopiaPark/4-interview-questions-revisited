@@ -14,7 +14,7 @@ import {
   Timestamp,
   orderBy,
 } from "firebase/firestore";
-import Option from "./Option";
+import Option from "./Option/Option";
 import "./App.css";
 
 const App = () => {
@@ -33,7 +33,7 @@ const App = () => {
   const [cs, setCs] = useState([]);
 
   //============================================================
-  // DELETE TODOS
+  // DELETE QUESTIONS
   //============================================================
 
   const handleDelete = async (id) => {
@@ -41,7 +41,7 @@ const App = () => {
   };
 
   //============================================================
-  // READ TODOS
+  // READ QUESTIONS
   //============================================================
 
   useEffect(() => {
@@ -70,7 +70,7 @@ const App = () => {
   }, [option]);
 
   //============================================================
-  // CREATE TODOS
+  // CREATE QUESTIONS
   //============================================================
 
   const createQuestion = async (e) => {
@@ -92,6 +92,10 @@ const App = () => {
   };
 
   //============================================================
+  // UPDATE/EDIT QUESTIONS
+  //============================================================
+
+  //============================================================
   // currentArray
   //============================================================
 
@@ -108,7 +112,7 @@ const App = () => {
       return cs;
     }
   };
-  console.log(search);
+
   return (
     <div className="App">
       <form onSubmit={createQuestion}>
@@ -148,12 +152,6 @@ const App = () => {
       />
       <ul>
         <Option
-          option={option}
-          html={html}
-          css={css}
-          js={js}
-          react={react}
-          cs={cs}
           handleDelete={handleDelete}
           currentArray={currentArray}
           search={search}
