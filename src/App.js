@@ -91,24 +91,6 @@ const App = () => {
   };
 
   //============================================================
-  // currentArrayLength
-  //============================================================
-
-  const currentArrayLength = () => {
-    if (option === "html") {
-      return html.length;
-    } else if (option === "css") {
-      return css.length;
-    } else if (option === "js") {
-      return js.length;
-    } else if (option === "react") {
-      return react.length;
-    } else if (option === "cs") {
-      return cs.length;
-    }
-  };
-
-  //============================================================
   // currentArray
   //============================================================
 
@@ -154,7 +136,7 @@ const App = () => {
       </form>
       <p className="title box-shadow">{option} questions:</p>
       <p className="paragraph-length">
-        There are currently {currentArrayLength()} questions
+        There are currently {currentArray().length} questions
       </p>
       <ul>
         <Option
