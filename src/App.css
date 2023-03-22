@@ -4,6 +4,19 @@
   padding: 0;
 }
 
+/* animation */
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
   background-color: #1e2124;
 }
@@ -57,6 +70,9 @@ select {
   margin-right: 0.5rem;
   background: #282b30;
   color: white;
+}
+select {
+  cursor: pointer;
 }
 .textarea-answer {
   background: #282b30;
@@ -115,6 +131,7 @@ span:hover {
   height: 1rem;
   border: none;
 }
+
 .hide {
   display: none;
 }
@@ -123,17 +140,6 @@ span:hover {
   margin: 1rem;
 }
 
-@keyframes show {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 button {
   cursor: pointer;
 }
