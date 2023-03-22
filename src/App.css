@@ -158,6 +158,9 @@ button {
 .box-shadow {
   box-shadow: 5px 10px 35px 4px rgb(121, 157, 187);
 }
+.search-input {
+  margin-bottom: 1rem;
+}
 
 @media only screen and (max-width: 1200px) {
   .card {

@@ -25,6 +25,7 @@ const App = () => {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [option, setOption] = useState("html");
+  const [search, setSearch] = useState("");
   const [html, setHtml] = useState([]);
   const [css, setCss] = useState([]);
   const [js, setJs] = useState([]);
@@ -107,7 +108,7 @@ const App = () => {
       return cs;
     }
   };
-
+  console.log(search);
   return (
     <div className="App">
       <form onSubmit={createQuestion}>
@@ -138,6 +139,13 @@ const App = () => {
       <p className="paragraph-length">
         There are currently {currentArray().length} questions
       </p>
+      <input
+        type="search"
+        className="search-input"
+        placeholder="search for a question"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
       <ul>
         <Option
           option={option}
