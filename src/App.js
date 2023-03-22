@@ -156,6 +156,7 @@ const App = () => {
           cs={cs}
           handleDelete={handleDelete}
           currentArray={currentArray}
+          search={search}
         />
       </ul>
     </div>
