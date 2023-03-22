@@ -13,6 +13,7 @@ import {
   doc,
   Timestamp,
   orderBy,
+  updateDoc,
 } from "firebase/firestore";
 import Option from "./Option/Option";
 import "./App.css";
@@ -95,6 +96,21 @@ const App = () => {
   // UPDATE/EDIT QUESTIONS
   //============================================================
 
+  const editAnswer = async (e) => {
+    if (e.key === "Enter") {
+      console.log("kvak");
+      doc.id = e.target.parentElement.id;
+      console.log(e.target.textContent);
+      console.log(doc.id);
+      console.log(e.target.parentElement.id);
+      console.log("kvak2");
+      await updateDoc(doc(db, option, doc.id), {
+        answer: e.target.textContent,
+      });
+      console.log("kvak3");
+    }
+  };
+
   //============================================================
   // currentArray
   //============================================================
@@ -155,6 +171,7 @@ const App = () => {
           handleDelete={handleDelete}
           currentArray={currentArray}
           search={search}
+          editAnswer={editAnswer}
         />
       </ul>
     </div>

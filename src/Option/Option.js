@@ -1,14 +1,14 @@
 import React from "react";
 import { HiTrash } from "react-icons/hi";
 
-const Option = ({ handleDelete, currentArray, search }) => {
+const Option = ({ handleDelete, currentArray, search, editAnswer }) => {
   return currentArray().map((el) => {
     if (
       el.question.toLowerCase().includes(search.toLowerCase()) ||
       search === ""
     ) {
       return (
-        <li key={el.id} className="card">
+        <li key={el.id} className="card" id={el.id}>
           <span>
             <HiTrash
               onClick={() => {
@@ -42,9 +42,10 @@ const Option = ({ handleDelete, currentArray, search }) => {
           </button>
           <p className="hide answer answer2">Answer:</p>
           <p
+            contentEditable="true"
             className="answer"
-            onClick={(e) => {
-              e.target.contentEditable = "true";
+            onKeyDown={(e) => {
+              editAnswer(e);
             }}
           >
             {el.answer}
