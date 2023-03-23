@@ -65,7 +65,8 @@ const Option = ({ handleDelete, currentArray, search, editAnswer }) => {
           </button>
         </li>
       );
-    } else return;
+    }
+    return null;
   });
 };
 
