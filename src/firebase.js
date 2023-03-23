@@ -7,7 +7,7 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC_SGUBOzrwKIC-z4h6Gx-bigqY30esdn4",
+  apiKey: process.env.FIREBASE_API,
   authDomain: "interview-questions-js.firebaseapp.com",
   projectId: "interview-questions-js",
   storageBucket: "interview-questions-js.appspot.com",

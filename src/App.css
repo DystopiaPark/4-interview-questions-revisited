@@ -16,7 +16,9 @@
     opacity: 1;
   }
 }
-
+[contenteditable] {
+  outline: 0px solid transparent;
+}
 body {
   background-color: #1e2124;
 }
