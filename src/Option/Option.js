@@ -47,6 +47,7 @@ const Option = ({ handleDelete, currentArray, search, editAnswer }) => {
             onKeyDown={(e) => {
               editAnswer(e);
             }}
+            suppressContentEditableWarning={true}
           >
             {el.answer}
           </p>
