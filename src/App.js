@@ -15,8 +15,10 @@ import {
   orderBy,
   updateDoc,
 } from "firebase/firestore";
-import Option from "./Option/Option";
+import Option from "./components/Option/Option";
 import "./App.css";
+import Form from "./components/Form/Form";
+import Search from "./components/Search/Search";
 
 const App = () => {
   //============================================================
@@ -131,41 +133,20 @@ const App = () => {
 
   return (
     <div className="App">
-      <form onSubmit={createQuestion}>
-        <input
-          type="text"
-          placeholder="question"
-          onChange={(e) => setQuestion(e.target.value)}
-          value={question}
-        />
-        <textarea
-          className="textarea-answer"
-          placeholder="answer"
-          onChange={(e) => setAnswer(e.target.value)}
-          value={answer}
-        ></textarea>
-        <select value={option} onChange={(e) => setOption(e.target.value)}>
-          <option value="html">HTML</option>
-          <option value="css">CSS</option>
-          <option value="js">JS</option>
-          <option value="react">React</option>
-          <option value="cs">CS</option>
-        </select>
-        <button type="submit" value="Add question" className="submit-btn">
-          Add New Interview Question
-        </button>
-      </form>
+      <Form
+        createQuestion={createQuestion}
+        question={question}
+        answer={answer}
+        setQuestion={setQuestion}
+        setAnswer={setAnswer}
+        option={option}
+        setOption={setOption}
+      />
       <p className="title box-shadow">{option} questions:</p>
       <p className="paragraph-length">
         There are currently {currentArray().length} questions
       </p>
-      <input
-        type="search"
-        className="search-input"
-        placeholder="search for a question"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+      <Search search={search} setSearch={setSearch} />
       <ul>
         <Option
           handleDelete={handleDelete}
