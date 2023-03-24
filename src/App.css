@@ -112,9 +112,11 @@ span {
   cursor: pointer;
   padding: 0.25rem 0.5rem 0 0;
 }
+
 span:hover {
   color: red;
 }
+
 .question {
   color: rgb(121, 157, 187);
   font-size: 1.25rem;
@@ -203,7 +205,4 @@ button {
   .card {
     width: 100%;
   }
-}
-.hover:hover {
-  opacity: 0.8;
 }
