@@ -42,12 +42,11 @@ const SignIn = () => {
         <button>Sign In</button>
       </form>
       <p>
-        If not, click
+        If not, click&nbsp;
         <Link to="/visitor" className="link">
-          {" "}
-          here{" "}
+          here
         </Link>
-        to view the questions.
+        &nbsp;to view the questions.
       </p>
     </div>
   );
