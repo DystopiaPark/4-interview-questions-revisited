@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 
 const SignIn = () => {
@@ -14,7 +14,7 @@ const SignIn = () => {
     setError("");
     try {
       await signIn(email, password);
-      navigate("/app");
+      navigate("/admin");
     } catch (e) {
       setError(e.message);
       console.log(e.message, error);
@@ -25,7 +25,7 @@ const SignIn = () => {
     <div className="sign-in">
       <div>
         <h2>Log In</h2>
-        <p>If you don't have the right credentials, you can't log in.</p>
+        <p>If you have credentials to edit or add questions, log in here:</p>
       </div>
       <form onSubmit={handleSubmit}>
         <div>
@@ -41,6 +41,14 @@ const SignIn = () => {
         </div>
         <button>Sign In</button>
       </form>
+      <p>
+        If not, click
+        <Link to="/visitor" className="link">
+          {" "}
+          here{" "}
+        </Link>
+        to view the questions.
+      </p>
     </div>
   );
 };

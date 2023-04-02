@@ -34,7 +34,9 @@ ul {
   list-style-type: none;
   color: white;
 }
-
+.link {
+  color: rgb(195, 97, 195);
+}
 form {
   padding: 1rem;
 }
@@ -190,6 +192,12 @@ button {
 }
 .search-input {
   margin-bottom: 1rem;
+}
+
+/* VISITOR */
+
+#select-visitor {
+  margin: 0.75rem 0;
 }
 
 @media only screen and (max-width: 1200px) {
