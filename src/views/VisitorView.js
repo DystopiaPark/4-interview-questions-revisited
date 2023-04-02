@@ -90,15 +90,18 @@ const VisitorView = () => {
       <Search search={search} setSearch={setSearch} />
       <ul>
         {currentArray().map((el) => {
-          return (
-            <li key={el.id} className="card" id={el.id}>
-              <p className="question">{el.question}</p>
-              <ShowButton />
-              <p className="hide answer answer2">Answer:</p>
-              <p className="answer">{el.answer}</p>
-              <HideButton />
-            </li>
-          );
+          if (el.question.toLowerCase().includes(search.toLowerCase())) {
+            return (
+              <li key={el.id} className="card" id={el.id}>
+                <p className="question">{el.question}</p>
+                <ShowButton />
+                <p className="hide answer answer2">Answer:</p>
+                <p className="answer">{el.answer}</p>
+                <HideButton />
+              </li>
+            );
+          }
+          return null;
         })}
       </ul>
     </div>

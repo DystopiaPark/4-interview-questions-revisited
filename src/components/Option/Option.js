@@ -5,10 +5,7 @@ import TrashCan from "./TrashCan";
 
 const Option = ({ handleDelete, currentArray, search, editAnswer }) => {
   return currentArray().map((el) => {
-    if (
-      el.question.toLowerCase().includes(search.toLowerCase()) ||
-      search === ""
-    ) {
+    if (el.question.toLowerCase().includes(search.toLowerCase())) {
       return (
         <li key={el.id} className="card" id={el.id}>
           <TrashCan el={el} handleDelete={handleDelete} />
