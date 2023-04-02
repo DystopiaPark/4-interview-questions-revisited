@@ -25,7 +25,7 @@ const SignIn = () => {
     <div className="sign-in">
       <div>
         <h2>Log In</h2>
-        <p>If you don't have the right credentials, you can't log in</p>
+        <p>If you don't have the right credentials, you can't log in.</p>
       </div>
       <form onSubmit={handleSubmit}>
         <div>

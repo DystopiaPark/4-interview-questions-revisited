@@ -113,6 +113,7 @@ select {
 }
 .sign-in h2 {
   text-align: center;
+  margin-bottom: 0.5rem;
 }
 .sign-in p {
   text-align: center;
