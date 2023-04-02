@@ -19,8 +19,6 @@ import Option from "./components/Option/Option";
 import "./App.css";
 import Form from "./components/Form/Form";
 import Search from "./components/Search/Search";
-import SignIn from "./components/Auth/SignIn";
-import AuthDetails from "./components/Auth/AuthDetails";
 
 const App = () => {
   //============================================================
@@ -135,8 +133,6 @@ const App = () => {
 
   return (
     <div className="App">
-      <SignIn />
-      <AuthDetails />
       <Form
         createQuestion={createQuestion}
         question={question}
