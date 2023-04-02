@@ -22,9 +22,10 @@ const SignIn = () => {
   };
 
   return (
-    <div style={{ color: "white" }}>
+    <div className="sign-in">
       <div>
-        <h1>Sing in to your account</h1>
+        <h2>Log In</h2>
+        <p>If you don't have the right credentials, you can't log in</p>
       </div>
       <form onSubmit={handleSubmit}>
         <div>
