@@ -141,7 +141,8 @@ const AdminView = () => {
       />
       <p className="title box-shadow">{option} questions:</p>
       <p className="paragraph-length">
-        There are currently {currentArray().length} questions
+        There are in total {currentArray().length} questions in{" "}
+        {option.toUpperCase()}
       </p>
       <Search search={search} setSearch={setSearch} />
       <ul>
