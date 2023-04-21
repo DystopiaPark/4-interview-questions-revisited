@@ -25,9 +25,11 @@ const AdminView = () => {
   // STATES
   //============================================================
 
+  let optionStorage = localStorage.getItem("option");
+
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
-  const [option, setOption] = useState("html");
+  const [option, setOption] = useState(optionStorage ? optionStorage : "html");
   const [search, setSearch] = useState("");
   const [html, setHtml] = useState([]);
   const [css, setCss] = useState([]);
@@ -35,6 +37,10 @@ const AdminView = () => {
   const [react, setReact] = useState([]);
   const [cs, setCs] = useState([]);
   const [angular, setAngular] = useState([]);
+
+  // SESION STORAGE
+
+  localStorage.setItem("option", option);
 
   //============================================================
   // DELETE QUESTIONS
@@ -118,17 +124,17 @@ const AdminView = () => {
   //============================================================
 
   const currentArray = () => {
-    if (option === "html") {
+    if (optionStorage === "html") {
       return html;
-    } else if (option === "css") {
+    } else if (optionStorage === "css") {
       return css;
-    } else if (option === "js") {
+    } else if (optionStorage === "js") {
       return js;
-    } else if (option === "react") {
+    } else if (optionStorage === "react") {
       return react;
-    } else if (option === "cs") {
+    } else if (optionStorage === "cs") {
       return cs;
-    } else if (option === "angular") {
+    } else if (optionStorage === "angular") {
       return angular;
     }
   };

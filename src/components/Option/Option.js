@@ -3,7 +3,13 @@ import HideButton from "./HideButton";
 import ShowButton from "./ShowButton";
 import TrashCan from "./TrashCan";
 
-const Option = ({ handleDelete, currentArray, search, editAnswer }) => {
+const Option = ({
+  handleDelete,
+  currentArray,
+  search,
+  editAnswer,
+  optionStorage,
+}) => {
   return currentArray().map((el) => {
     if (el.question.toLowerCase().includes(search.toLowerCase())) {
       return (
