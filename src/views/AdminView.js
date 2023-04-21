@@ -38,7 +38,7 @@ const AdminView = () => {
   const [cs, setCs] = useState([]);
   const [angular, setAngular] = useState([]);
 
-  // SESION STORAGE
+  // LOCAL STORAGE
 
   localStorage.setItem("option", option);
 
