@@ -34,6 +34,7 @@ const AdminView = () => {
   const [js, setJs] = useState([]);
   const [react, setReact] = useState([]);
   const [cs, setCs] = useState([]);
+  const [angular, setAngular] = useState([]);
 
   //============================================================
   // DELETE QUESTIONS
@@ -67,6 +68,8 @@ const AdminView = () => {
         setReact(arr);
       } else if (option === "cs") {
         setCs(arr);
+      } else if (option === "angular") {
+        setAngular(arr);
       }
     });
     return () => unsubscribe();
@@ -125,6 +128,8 @@ const AdminView = () => {
       return react;
     } else if (option === "cs") {
       return cs;
+    } else if (option === "angular") {
+      return angular;
     }
   };
 

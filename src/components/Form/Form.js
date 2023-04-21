@@ -28,6 +28,7 @@ const Form = ({
         <option value="css">CSS</option>
         <option value="js">JS</option>
         <option value="react">React</option>
+        <option value="angular">Angular</option>
         <option value="cs">CS</option>
       </select>
       <button type="submit" value="Add question" className="submit-btn">

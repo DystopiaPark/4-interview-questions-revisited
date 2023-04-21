@@ -22,6 +22,7 @@ const VisitorView = () => {
   const [js, setJs] = useState([]);
   const [react, setReact] = useState([]);
   const [cs, setCs] = useState([]);
+  const [angular, setAngular] = useState([]);
 
   //============================================================
   // READ QUESTIONS
@@ -47,6 +48,8 @@ const VisitorView = () => {
         setReact(arr);
       } else if (option === "cs") {
         setCs(arr);
+      } else if (option === "angular") {
+        setAngular(arr);
       }
     });
     return () => unsubscribe();
@@ -67,6 +70,8 @@ const VisitorView = () => {
       return react;
     } else if (option === "cs") {
       return cs;
+    } else if (option === "angular") {
+      return angular;
     }
   };
 
@@ -81,6 +86,7 @@ const VisitorView = () => {
         <option value="css">CSS</option>
         <option value="js">JS</option>
         <option value="react">React</option>
+        <option value="angular">Angular</option>
         <option value="cs">CS</option>
       </select>
       <p className="title box-shadow">{option} questions:</p>
